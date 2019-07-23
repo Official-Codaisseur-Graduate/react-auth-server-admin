@@ -14,7 +14,7 @@ export class SignUpForm extends Component {
         password: '',
         passwordConfirmation: '',
         gender: '',
-        dateOfBirth: null
+        dateOfBirth: ''
     }
 
     onSubmit = (event) => {
@@ -68,7 +68,6 @@ export class SignUpForm extends Component {
                                 id="lastName"
                                 label="Last Name"
                                 name="lastName"
-                                autoComplete="lname"
                                 onChange={this.onChange}
                             />
                         </Grid>
@@ -81,7 +80,6 @@ export class SignUpForm extends Component {
                                 id="email"
                                 label="Email Address"
                                 name="email"
-                                autoComplete="email"
                                 onChange={this.onChange}
                             />
                         </Grid>
