@@ -22,7 +22,9 @@ export class SignUpForm extends Component {
         if (this.state.password !== this.state.passwordConfirmation) {
             alert('Password must be identical')
         }
+        console.log(this.state)
         this.props.onSubmit(this.state)
+        
         this.setState({
             email: '',
             firstName: '',
@@ -32,6 +34,8 @@ export class SignUpForm extends Component {
             gender: '',
             dateOfBirth: ''
         })
+
+
     }
 
     onChange = (event) => {
