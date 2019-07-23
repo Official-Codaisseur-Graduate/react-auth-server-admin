@@ -30,7 +30,7 @@ export const IDENTITY_CONFIG = {
 export const METADATA_OIDC = {
     issuer: "https://identityserver",
     jwks_uri: authConfig.reactAppAuthUrl + "/jwks",
-    authorization_endpoint: authConfig.reactAppAuthUrl + "/connect/authorize",
+    authorization_endpoint: authConfig.reactAppAuthUrl + "/auth",
     token_endpoint: authConfig.reactAppAuthUrl + "/connect/token",
     userinfo_endpoint: authConfig.reactAppAuthUrl + "/connect/userinfo",
     end_session_endpoint: authConfig.reactAppAuthUrl + "/connect/endsession",
