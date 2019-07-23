@@ -12,12 +12,8 @@ export class SignupContainer extends Component {
     render() {
         return (
             <div>
-<<<<<<< HEAD
-            <h1>HOI</h1>
-            
-=======
+
             <h1>Sign up</h1>
->>>>>>> feat/userslist
             <SignUpForm onSubmit={this.onSubmit}/>
             </div>
         )
