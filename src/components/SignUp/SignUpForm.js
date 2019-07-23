@@ -14,15 +14,17 @@ export class SignUpForm extends Component {
         password: '',
         passwordConfirmation: '',
         gender: '',
-        dateOfBirth: null
+        dateOfBirth: ''
     }
 
     onSubmit = (event) => {
         event.preventDefault()
-        console.log('hoi!')
-        if(this.state.password !== this.state.passwordConfirmation) {
+        if (this.state.password !== this.state.passwordConfirmation) {
+            alert('Password must be identical')
         }
+        console.log(this.state)
         this.props.onSubmit(this.state)
+        
         this.setState({
             email: '',
             firstName: '',
@@ -32,16 +34,17 @@ export class SignUpForm extends Component {
             gender: '',
             dateOfBirth: ''
         })
+
+
     }
 
-    onChange= (event) => {
-        const {name, value} = event.target
-        console.log('hopiiiii')
+    onChange = (event) => {
+        const { name, value } = event.target
 
         this.setState({
             [name]: value
         })
-        }
+    }
     render() {
         return (
             <div>
@@ -68,7 +71,6 @@ export class SignUpForm extends Component {
                                 id="lastName"
                                 label="Last Name"
                                 name="lastName"
-                                autoComplete="lname"
                                 onChange={this.onChange}
                             />
                         </Grid>
@@ -81,7 +83,6 @@ export class SignUpForm extends Component {
                                 id="email"
                                 label="Email Address"
                                 name="email"
-                                autoComplete="email"
                                 onChange={this.onChange}
                             />
                         </Grid>
@@ -106,6 +107,7 @@ export class SignUpForm extends Component {
                                 id="passwordConfirmation"
                                 label="Validate password"
                                 name="passwordConfirmation"
+                                onChange={this.onChange}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -117,6 +119,7 @@ export class SignUpForm extends Component {
                                 id="gender"
                                 value={this.state.gender}
                                 name="gender"
+                                onChange={this.onChange}
                             >
                                 <MenuItem value="male">Male</MenuItem>
                                 <MenuItem value="female">Female</MenuItem>

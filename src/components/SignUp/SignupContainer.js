@@ -6,17 +6,18 @@ import { signUp } from '../../actions/signup';
 export class SignupContainer extends Component {
 
     onSubmit = (data) => {
-        const {email, firstName, lastName, password, gender, dateOfBirth} = data
-        this.props.signUp(
-            email, firstName, lastName, password, gender, dateOfBirth
-        )
+        this.props.signUp(data)
     }
 
     render() {
         return (
             <div>
+<<<<<<< HEAD
             <h1>HOI</h1>
             
+=======
+            <h1>Sign up</h1>
+>>>>>>> feat/userslist
             <SignUpForm onSubmit={this.onSubmit}/>
             </div>
         )

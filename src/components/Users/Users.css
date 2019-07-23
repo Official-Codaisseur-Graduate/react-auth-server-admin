@@ -1,0 +1,14 @@
+.mainUserDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.usersList  {
+    width: 400px;
+    border-style: inset;
+    margin-top: 2vh;
+}
