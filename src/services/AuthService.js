@@ -60,7 +60,9 @@ export default class AuthService {
     };
 
     setUserInfo = authResult => {
-        const data = this.parseJwt(this.accessToken);
+        // console.log("AUTH RESULT : ")
+        const data = this.parseJwt(authResult.idToken);
+        // const data = this.parseJwt(this.accessToken);
 
         this.setSessionInfo(authResult);
         this.setUser(data);
@@ -76,12 +78,12 @@ export default class AuthService {
     };
 
     navigateToScreen = () => {
-        const redirectUri = !!localStorage.getItem("redirectUri")
-            ? localStorage.getItem("redirectUri")
-            : "/en/dashboard";
-        const language = "/" + redirectUri.split("/")[1];
-
-        window.location.replace(language + "/dashboard");
+        // const redirectUri = localStorage.getItem("redirectUri")
+        //     ? localStorage.getItem("redirectUri")
+        //     : "/dashboard";
+        // //const language = "/" + redirectUri.split("/")[1];
+        // console.log(redirectUri)
+        window.location.replace("/dashboard");
     };
 
     setSessionInfo(authResult) {
