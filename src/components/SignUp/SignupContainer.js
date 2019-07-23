@@ -16,6 +16,7 @@ export class SignupContainer extends Component {
         return (
             <div>
             <h1>HOI</h1>
+            
             <SignUpForm onSubmit={this.onSubmit}/>
             </div>
         )
