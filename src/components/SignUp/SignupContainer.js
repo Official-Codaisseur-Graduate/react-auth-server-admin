@@ -6,10 +6,7 @@ import { signUp } from '../../actions/signup';
 export class SignupContainer extends Component {
 
     onSubmit = (data) => {
-        const {email, firstName, lastName, password, gender, dateOfBirth} = data
-        this.props.signUp(
-            email, firstName, lastName, password, gender, dateOfBirth
-        )
+        this.props.signUp(data)
     }
 
     render() {
