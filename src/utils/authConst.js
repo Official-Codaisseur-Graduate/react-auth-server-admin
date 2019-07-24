@@ -36,10 +36,10 @@ export const METADATA_OIDC = {
     issuer: authority,
     jwks_uri: authConfig.reactAppAuthUrl + "/jwks",
     authorization_endpoint: authConfig.reactAppAuthUrl + "/auth",
-    token_endpoint: authConfig.reactAppAuthUrl + "/connect/token",
-    userinfo_endpoint: authConfig.reactAppAuthUrl + "/connect/userinfo",
-    end_session_endpoint: authConfig.reactAppAuthUrl + "/connect/endsession",
+    token_endpoint: authConfig.reactAppAuthUrl + "/token",
+    userinfo_endpoint: authConfig.reactAppAuthUrl + "/me",
+    end_session_endpoint: authConfig.reactAppAuthUrl + "/session/end",
     check_session_iframe: authConfig.reactAppAuthUrl + "/connect/checksession",
-    revocation_endpoint: authConfig.reactAppAuthUrl + "/connect/revocation",
-    introspection_endpoint: authConfig.reactAppAuthUrl + "/connect/introspect"
+    revocation_endpoint: authConfig.reactAppAuthUrl + "/token/revocation",
+    introspection_endpoint: authConfig.reactAppAuthUrl + "/token/introspect"
 };
