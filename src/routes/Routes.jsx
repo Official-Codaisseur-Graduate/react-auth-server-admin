@@ -6,7 +6,7 @@ import { Callback } from "../components/auth/Callback";
 import { Logout } from "../components/auth/Logout";
 import { LogoutCallback } from "../components/auth/LogoutCallback";
 import { PrivateRoute } from "./PrivateRoute";
-import { SignupContainer } from "../components/SignUp/SignupContainer";
+import SignupContainer from "../components/SignUp/SignupContainer";
 import { SilentRenew } from "../components/auth/SilentReniew";
 import PublicPage from "./../components/PublicPage";
 import PrivatePage from "./../components/PrivatePage"
