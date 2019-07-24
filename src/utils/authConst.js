@@ -3,11 +3,11 @@ const authority = process.env.REACT_APP_AUTH_URL || "http://localhost:5000";
 
 const authConfig = {
     reactAppAuthUrl: authority,
-    clientId: process.env.REACT_APP_IDENTITY_CLIENT_ID || "admin",
+    clientId: process.env.REACT_APP_IDENTITY_CLIENT_ID || "admin-client",
     redirectUri: process.env.REACT_APP_REDIRECT_URL || "https://172.17.0.1:3000",
     login: authority + "/auth",
-    silentRedirectUri: process.env.REACT_APP_SILENT_REDIRECT_URL || "",
-    postLogoutRedirectUri: process.env.REACT_APP_LOGOFF_REDIRECT_URL || "",
+    silentRedirectUri: process.env.REACT_APP_SILENT_REDIRECT_URL || "https://172.17.0.1:3000/silentrenew",
+    postLogoutRedirectUri: process.env.REACT_APP_LOGOFF_REDIRECT_URL || "https://172.17.0.1:3000/logout/callback",
 
 }
 
