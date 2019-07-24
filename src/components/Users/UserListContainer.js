@@ -1,17 +1,28 @@
 import React, { Component } from 'react'
-import { Table } from './UserList';
+import EnhancedTable from './UserList';
+import {connect} from 'react-redux'
+import {getUsers} from '../../actions/users'
 // import UserList from './UserList';
 
 export class UserListContainer extends Component {
 
-    render() {
+    componentDidMount() {
+        this.props.getUsers()
+    }
+    
 
+    render() {
         return (
             <div>
-                <Table />
+                <EnhancedTable users={this.props.users}/>
             </div>
         )
     }
 }
 
-export default UserListContainer
+const mapStateToProps = (rState) => {
+    return{
+        users: rState.users
+    }
+}
+export default connect(mapStateToProps,{getUsers})(UserListContainer)
