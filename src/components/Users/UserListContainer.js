@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import UserList from './UserList';
+import { Table } from './UserList';
+// import UserList from './UserList';
 
 export class UserListContainer extends Component {
 
@@ -7,7 +8,7 @@ export class UserListContainer extends Component {
 
         return (
             <div>
-                <UserList />
+                <Table />
             </div>
         )
     }
