@@ -1,9 +1,33 @@
-div.public-page {
-
+div.public-page button {
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    min-width: 100px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(19, 105, 19);
+    border-radius: 10px;
+    transition: .1s linear;
+}
+div.public-page button:hover {
+    background-color: rgb(26, 150, 26);
+    cursor: pointer;
 }
 
 div.public-page > div.public-inner-container {
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 40px 30vw;
-    height: 400px;
-    background-color: blue;
+    padding: 30px 20px;
+    min-height: 200px;
+    background-color: rgba(23, 27, 83, 0.623);
+}
+div.public-page > div.public-inner-container h1 {
+    font-size: 25px;
+    color: white;
 }
