@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from './../services/AuthService';
+import "./PublicPage.css";
+
 
 export default class PublicPage extends Component {
 
@@ -14,9 +16,11 @@ export default class PublicPage extends Component {
 
     render() {
         return (
-            <div>
-                PUBLIC PAGE
-                <button onClick={this.login}>Login</button>
+            <div className="public-page">
+                <div className="public-inner-container">
+                    <h1>PUBLIC PAGE</h1>
+                    <button onClick={this.login}>Login</button>
+                </div>
             </div>
         )
     }
