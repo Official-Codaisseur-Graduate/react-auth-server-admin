@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { Component } from "react";
+import { Routes } from "./routes/Routes";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./providers/authProvider";
 import './App.css';
-import Routes from './components/Routes';
+import HeaderContainer from "./components/header/HeaderContainer";
 
-function App() {
-  return (
-    <div className="App">
-      <Routes />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <AuthProvider>
+        <HeaderContainer />
+        <BrowserRouter children={Routes} basename={"/"} />
+      </AuthProvider>
+    );
+  }
 }
 
 export default App;

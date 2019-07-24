@@ -1,27 +1,20 @@
-import * as React from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { Component } from 'react'
+import SignupContainer from './SignUp/SignupContainer';
+import {Route} from 'react-router-dom'
+import UserListContainer from './Users/UserListContainer';
+import UserListExample from './Users/UserListExample'
+import { Table } from './Users/UserList';
 
+export class Routes extends Component {
+    render() {
+        return (
+            <div>
+                <Route exact path='/signup' component={SignupContainer} />
+                <Route exact path='/users' component={UserListContainer} />
+                <Table />
+            </div>
+        )
+    }
+}
 
-import { Callback } from "../components/auth/Callback";
-import { Logout } from "../components/auth/Logout";
-import { LogoutCallback } from "../components/auth/LogoutCallback";
-import { PrivateRoute } from "./PrivateRoute";
-import SignupContainer from "../components/SignUp/SignupContainer";
-import { SilentRenew } from "../components/auth/SilentReniew";
-import PublicPage from "./../components/PublicPage";
-import PrivatePage from "./../components/PrivatePage"
-import { UserListContainer } from '../components/Users/UserListContainer'
-
-
-export const Routes = (
-    <Switch>
-        <Route exact={true} path="/signin-oidc" component={Callback} />
-        <Route exact={true} path="/logout" component={Logout} />
-        <Route exact={true} path="/logout/callback" component={LogoutCallback} />
-        <Route exact={true} path="/register" component={SignupContainer} />
-        <Route exact={true} path="/silentrenew" component={SilentRenew} />
-        <PrivateRoute path="/dashboard" component={PrivatePage} />
-        <PrivateRoute path="/user-list" component={UserListContainer} />
-        <Route path="/" component={PublicPage} />
-    </Switch>
-);
+export default Routes
