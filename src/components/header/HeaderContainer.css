@@ -1,16 +1,21 @@
 div.header-container {
-    height: 70px;
+    height: 50px;
     display: block;
     position: relative;
     background-color: rgba(112, 114, 226, 0.295);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
 }
 
 div.header-container::after {
     content: "";
-    height: 70px;
+    height: 60px;
     background: url('./../../assets/images/header-bg/bluewave-ita-bck.jpg') no-repeat center center;
     background-size: cover;
-    opacity: 0.5;
+    opacity: 0.2;
     top: 0;
     left: 0;
     bottom: 0;

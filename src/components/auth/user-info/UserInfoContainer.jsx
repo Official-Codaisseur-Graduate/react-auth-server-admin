@@ -1,11 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class UserInfoContainer extends Component {
+class UserInfoContainer extends Component {
     render() {
         return (
-            <div>
-                
+            <div className="user-info-container">
+                <div className="username">Billy Vlachos</div>
             </div>
         )
     }
 }
+
+// Export the connected component
+export default connect()(UserInfoContainer);
