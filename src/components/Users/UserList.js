@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 // import clsx from 'clsx';
-// import { lighten, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -12,6 +12,7 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 // import Toolbar from '@material-ui/core/Toolbar';
 // import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import { TablePagination } from '@material-ui/core';
 // import IconButton from '@material-ui/core/IconButton';
 // import Tooltip from '@material-ui/core/Tooltip';
 // import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -127,31 +128,27 @@ function TableHeadPrefix(props) {
 
 
 
-// const useStyles = makeStyles(theme => ({
-//     root: {
-//         width: '100%',
-//         marginTop: theme.spacing(3),
-//     },
-//     paper: {
-//         width: '100%',
-//         marginBottom: theme.spacing(2),
-//     },
-//     table: {
-//         minWidth: 750,
-//     },
-//     tableWrapper: {
-//         overflowX: 'auto',
-//     },
-// }))
+const useStyles = makeStyles(theme => ({
+    root: {
+        width: '100%',
+        marginTop: theme.spacing(3),
+    },
+    paper: {
+        width: '100%',
+        marginBottom: theme.spacing(2),
+    },
+    table: {
+        minWidth: 750,
+    },
+    tableWrapper: {
+        overflowX: 'auto',
+    },
+}))
 
 export function EnhancedTable(props) {
-    // const classes = useStyles()
-    //     const [order, setOrder] = React.useState('asc')
-    //     const [orderBy, setOrderBy] = React.useState('id')
-    //     const [selected, setSelected] = React.useState([])
-    //     const [page, setPage] = React.useState(0)
-    //     const [dense, setDense] = React.useState(false)
-    //     const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const classes = useStyles()
+        const [page, setPage] = React.useState(0)
+        const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
 
     // function handleSortRequest(event, property) {
@@ -162,14 +159,14 @@ export function EnhancedTable(props) {
 
 
 
-    // function handleChangePage(event, newPage) {
-    //     this.setPage(newPage)
-    // }
+    function handleChangePage(newPage) {
+        setPage(newPage)
+    }
 
-    // function handleChangeRowsPerPage(event) {
-    //     this.setRowsPerPage(+event.target.value)
-    //     this.setPage(0)
-    // }
+    function handleChangeRowsPerPage(event) {
+        setRowsPerPage(+event.target.value)
+        setPage(0)
+    }
 
     // function handleChangeDense(event) {
     //     this.setDense(event.target.checked)
@@ -177,7 +174,7 @@ export function EnhancedTable(props) {
 
     return (
         <div >
-            <Paper>
+            <Paper className={classes.paper}>
                 <div >
                 <Table
                     >
@@ -204,10 +201,23 @@ export function EnhancedTable(props) {
                         )
                     })}
                     </TableBody>
-
                     </Table>
-                
                 </div>
+                <TablePagination 
+                rowsPerPageOptions={[5, 10, 25]}
+                component="div"
+                count={props.users.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                backIconButtonProps={{
+                    'aria-label': 'Previous Page',
+                }}
+                nextIconButtonProps={{
+                    'aria-label': 'Next Page',
+                }}
+                onChangePage={handleChangePage}
+                onChangeRowsPerPage={handleChangeRowsPerPage}
+                />
             </Paper>
         </div>
     )
