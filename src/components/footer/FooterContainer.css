@@ -1,5 +1,4 @@
 footer {
-  height: 50px;
   display: block;
   position: relative;
   width: 100%;
@@ -14,7 +13,6 @@ footer {
 
 footer::after {
   content: "";
-  height: 60px;
   background: url('./../../assets/images/header-bg/bluewave-ita-bck.jpg') no-repeat center center;
   background-size: cover;
   opacity: 0.2;
