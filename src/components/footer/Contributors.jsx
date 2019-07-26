@@ -5,6 +5,7 @@ export default class Contributors extends Component {
   render() {
     return (
       <div className='contributors'>
+        <h1>Contributors</h1>
         <Contributor
           name='Billy Vlachos'
           linkdin='https://github.com/lakylekidd'
