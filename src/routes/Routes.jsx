@@ -11,6 +11,7 @@ import { SilentRenew } from "../components/auth/SilentReniew";
 import PublicPage from "./../components/PublicPage";
 import PrivatePage from "./../components/PrivatePage"
 import { UserListContainer } from '../components/Users/UserListContainer'
+import SignupConfirm from '../components/SignUp/SignupConfirm';
 
 
 export const Routes = (
@@ -19,6 +20,7 @@ export const Routes = (
         <Route exact={true} path="/logout" component={Logout} />
         <Route exact={true} path="/logout/callback" component={LogoutCallback} />
         <Route exact={true} path="/register" component={SignupContainer} />
+        <Route exact={true} path="/register-conferm" component={SignupConfirm} />
         <Route exact={true} path="/silentrenew" component={SilentRenew} />
         <PrivateRoute path="/dashboard" component={PrivatePage} />
         <PrivateRoute path="/user-list" component={UserListContainer} />
