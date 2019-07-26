@@ -27,7 +27,7 @@ export default function NavContainer(){
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClose}>Signup      </MenuItem>
+                <MenuItem value="register" onClick={handleClose}>Signup      </MenuItem>
                 <MenuItem onClick={handleClose}>Log In      </MenuItem>
             </Menu>
         </div>
