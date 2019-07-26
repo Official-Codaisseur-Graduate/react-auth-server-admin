@@ -1,5 +1,6 @@
 import React from 'react';
 import "./NavContainer.css";
+import { Link } from 'react-router-dom';
 import {Menu, MenuItem, Button } from '@material-ui/core';
 
 export default function NavContainer(){
@@ -26,7 +27,7 @@ export default function NavContainer(){
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem component={Link} to={"/register"} onClick={handleClose}>Signup      </MenuItem>
+                <MenuItem component={Link} to={"/register"} onClick={handleClose}>Signup</MenuItem>
                 <MenuItem onClick={handleClose}>Log In      </MenuItem>
             </Menu>
         </div>

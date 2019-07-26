@@ -9,10 +9,10 @@ import FooterContainer from "./components/footer/FooterContainer";
 class App extends Component {
   render() {
     return (
-      <AuthProvider>
-        <HeaderContainer />
-        <BrowserRouter children={Routes} basename={"/"} />
-        <FooterContainer />
+      <AuthProvider>        
+        <BrowserRouter children={Routes} basename={"/"}>
+          
+        </BrowserRouter>
       </AuthProvider>
     );
   }
