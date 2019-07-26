@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Menu, MenuItem } from '@material-ui/core';
+import {Link} from 'react-router-dom'
 
 export function UserInfoContainer() {
     const [anchorEl, setAnchorEl] = React.useState(null)
@@ -28,7 +29,7 @@ export function UserInfoContainer() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
         >
-            <MenuItem onClick={handleClose}>Logout     </MenuItem>
+            <MenuItem component={Link} to="/logout" onClick={handleClose}>Logout     </MenuItem>
         </Menu>
     </div>
     )

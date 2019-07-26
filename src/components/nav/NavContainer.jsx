@@ -28,7 +28,7 @@ export default function NavContainer(){
                 onClose={handleClose}
             >
                 <MenuItem component={Link} to={"/register"} onClick={handleClose}>Signup</MenuItem>
-                <MenuItem onClick={handleClose}>Log In      </MenuItem>
+                <MenuItem component={Link} to={"/login" }onClick={handleClose}>Log In      </MenuItem>
             </Menu>
         </div>
         )
