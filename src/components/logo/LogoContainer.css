@@ -1,6 +1,6 @@
 .logo-container {
   text-decoration: none;
 }
-.logo-container h1 {
-  font-size: 45px;
+.logo-container img {
+  height: 50px;
 }
