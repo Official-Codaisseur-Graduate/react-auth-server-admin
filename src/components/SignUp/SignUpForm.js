@@ -22,9 +22,11 @@ export class SignUpForm extends Component {
         if (this.state.password !== this.state.passwordConfirmation) {
             alert('Password must be identical')
         }
-        console.log(this.state)
+
+        //Send data to SignUpContainer.js
         this.props.onSubmit(this.state)
         
+        //Reset state
         this.setState({
             email: '',
             firstName: '',
@@ -41,6 +43,7 @@ export class SignUpForm extends Component {
     onChange = (event) => {
         const { name, value } = event.target
 
+        //Set the state property's to the value typed in
         this.setState({
             [name]: value
         })
