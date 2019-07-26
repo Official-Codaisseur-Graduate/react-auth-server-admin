@@ -9,6 +9,8 @@ This client is made to work with the [node-auth-server](https://github.com/Offic
 ## TODOS
 - [ ] Limit user list view and edit components to admin users only
 - [ ] Implement the logo component
+    - [x] Implement a placeholder logo
+    - [ ] Create a logo
 - [ ] Implement the nav component
 - [ ] Implement the user info component
     - **If user is logged in**:
