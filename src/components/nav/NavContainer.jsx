@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "./NavContainer.css";
-import {Menu, MenuItem, Button, ListItemIcon, Link } from '@material-ui/core';
+import {Menu, MenuItem, Button } from '@material-ui/core';
 
 export default function NavContainer(){
     const [anchorEl, setAnchorEl] = React.useState(null)
