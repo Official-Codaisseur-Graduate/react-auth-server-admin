@@ -1,11 +1,10 @@
-import {GET_USERS} from '../actions/users'
+import { GET_USERS } from '../actions/users';
 
 const initialState = []
 
-export default (state = initialState, {type, payload}) => {
+export default (state = initialState, { type, payload }) => {
     switch (type) {
         case GET_USERS:
-            console.log(payload)
             return payload
         default:
             return state
