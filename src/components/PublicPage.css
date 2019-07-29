@@ -10,12 +10,13 @@ div.public-page button {
     border-radius: 10px;
     transition: .1s linear;
 }
+
 div.public-page button:hover {
     background-color: rgb(26, 150, 26);
     cursor: pointer;
 }
 
-div.public-page > div.public-inner-container {
+div.public-page>div.public-inner-container {
     color: white;
     border-radius: 10px;
     display: flex;
@@ -27,7 +28,8 @@ div.public-page > div.public-inner-container {
     min-height: 200px;
     background-color: rgba(23, 27, 83, 0.623);
 }
-div.public-page > div.public-inner-container h1 {
+
+div.public-page>div.public-inner-container h1 {
     font-size: 25px;
     color: white;
 }

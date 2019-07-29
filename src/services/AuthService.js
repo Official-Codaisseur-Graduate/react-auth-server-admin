@@ -30,11 +30,10 @@ export default class AuthService {
             }
         });
         this.UserManager.events.addSilentRenewError(e => {
-            console.log("silent renew error", e.message);
+            console.error("silent renew error", e.message);
         });
 
         this.UserManager.events.addAccessTokenExpired(() => {
-            console.log("token expired");
             this.signinSilent();
         });
     }
@@ -60,7 +59,6 @@ export default class AuthService {
     };
 
     setUserInfo = authResult => {
-        // console.log("AUTH RESULT : ")
         const data = this.parseJwt(authResult.idToken);
         // const data = this.parseJwt(this.accessToken);
 
@@ -81,8 +79,7 @@ export default class AuthService {
         // const redirectUri = localStorage.getItem("redirectUri")
         //     ? localStorage.getItem("redirectUri")
         //     : "/dashboard";
-        // //const language = "/" + redirectUri.split("/")[1];
-        // console.log(redirectUri)
+        // const language = "/" + redirectUri.split("/")[1];
         window.location.replace("/dashboard");
     };
 
@@ -98,11 +95,8 @@ export default class AuthService {
 
     signinSilent = () => {
         this.UserManager.signinSilent()
-            .then(user => {
-                console.log("signed in", user);
-            })
             .catch(err => {
-                console.log(err);
+                console.error(err);
             });
     };
     signinSilentCallback = () => {

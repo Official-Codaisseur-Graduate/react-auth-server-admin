@@ -29,6 +29,7 @@ export const Routes = (
             <Route exact={true} path="/logout/callback" component={LogoutCallback} />
             <Route exact={true} path="/register" component={SignupContainer} />
             <Route exact={true} path="/silentrenew" component={SilentRenew} />
+            <Route exact={true} path="/register-conferm" component={SignupConfirm} />
             <PrivateRoute path="/dashboard" component={PrivatePage} />
             <PrivateRoute path="/user-list" component={UserListContainer} />
             <Route path="/" component={PublicPage} />

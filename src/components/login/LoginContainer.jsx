@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from './../../services/AuthService';
 import { connect } from 'react-redux';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class LoginContainer extends Component {
     constructor() {

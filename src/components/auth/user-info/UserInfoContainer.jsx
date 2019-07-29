@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Menu, MenuItem } from '@material-ui/core';
-import { Link } from 'react-router-dom'
-import {makeStyles} from '@material-ui/core/styles'
+
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles(theme => ({
@@ -16,12 +17,10 @@ export function UserInfoContainer() {
     const [anchorEl, setAnchorEl] = React.useState(null)
 
     function handleClick(event) {
-        console.log('set', setAnchorEl)
         setAnchorEl(event.currentTarget)
     }
 
     function handleClose() {
-        console.log('normal', anchorEl)
         setAnchorEl(null)
     }
 
