@@ -15,7 +15,6 @@ export class SignupContainer extends Component {
     }
 
     render() {
-        console.log('propsusers:', this.props.users)
         return (
             <div>
 

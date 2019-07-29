@@ -7,7 +7,6 @@ export default (state = initialState, {type, payload}) => {
         case SIGN_IN_INFO:
             return payload
         default:
-            console.log(state)
             return state
     }
 }

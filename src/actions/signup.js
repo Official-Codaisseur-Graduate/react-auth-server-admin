@@ -23,9 +23,7 @@ export const signUp = (data) => (dispatch) => {
         .post(`${baseUrl}/users/signup`)
         .send({...data})
         .then(res => {
-            console.log('Response test?',res)
             if (res.status === 201) {
-                console.log('conferm sine up')
                 window.history.pushState(`${thisUrl}/register-conferm`)
             }
         })

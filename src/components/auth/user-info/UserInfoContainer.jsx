@@ -7,12 +7,10 @@ export function UserInfoContainer() {
     const [anchorEl, setAnchorEl] = React.useState(null)
 
     function handleClick(event) {
-        console.log('set', setAnchorEl)
         setAnchorEl(event.currentTarget)
     }
 
     function handleClose() {
-        console.log('normal', anchorEl)
         setAnchorEl(null)
     }
 

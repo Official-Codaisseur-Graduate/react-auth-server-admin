@@ -16,9 +16,8 @@ export const getUsers = () => {
         request
             .get(`${baseUrl}/users`)
             .then(res => {
-                console.log(res.body)
                 dispatch(actionUserList(res.body))
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 }
