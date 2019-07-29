@@ -9,13 +9,13 @@ This client is made to work with the [node-auth-server](https://github.com/Offic
 ## TODOS
 - [ ] Limit user list view and edit components to admin users only
 - [x] Implement the logo component
-- [ ] Implement the nav component
-- [ ] Implement the user info component
+- [x] Implement the nav component
+- [x] Implement the user info component
     - **If user is logged in**:
         - [ ] Needs to display user first name
-        - [ ] Display logout button
+        - [x] Display logout button
     - **If user is not logged in**:
-        - [ ] Display login link --> should redirect to login component. Login component should have only a 'Login with Codaisseur' button.
+        - [x] Display login link --> should redirect to login component. Login component should have only a 'Login with Codaisseur' button.
 - [ ] Implement a user edit component
     - [ ] Should allow admin to change user information
     - [ ] Should show if account is locked (Implement account lock feature on server)
