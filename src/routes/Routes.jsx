@@ -2,9 +2,6 @@ import * as React from "react";
 import { Route, Switch } from "react-router-dom";
 import HeaderContainer from "./../components/header/HeaderContainer";
 import FooterContainer from "./../components/footer/FooterContainer";
-
-
-
 import { Callback } from "../components/auth/Callback";
 import { Logout } from "../components/auth/Logout";
 import { LogoutCallback } from "../components/auth/LogoutCallback";
