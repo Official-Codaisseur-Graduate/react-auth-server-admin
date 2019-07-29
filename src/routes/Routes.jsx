@@ -15,9 +15,11 @@ import { SilentRenew } from "../components/auth/SilentReniew";
 import PublicPage from "./../components/PublicPage";
 import PrivatePage from "./../components/PrivatePage"
 import { UserListContainer } from '../components/Users/UserListContainer'
+import SignupConfirm from '../components/SignUp/SignupConfirm';
 
 
 export const Routes = (
+
     <div>
         <HeaderContainer />
         <Switch>
