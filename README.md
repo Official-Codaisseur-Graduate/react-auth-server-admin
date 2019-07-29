@@ -25,4 +25,28 @@ This client is made to work with the [node-auth-server](https://github.com/Offic
 - [ ] Implement protected products links
     - [ ] Implement products list component and only allow users with 'read:products' claim set to true to enter this component.
     - [ ] Implement product create component and only allow users with 'edit:products' claim set to true to enter this component.
+
     
+###Packages used so far
+
+The following packages are used:
+- Material UI
+- OIDC - client
+- React
+- React-scripts
+- React-dom
+- React-router-dom
+- React-router
+- React-Redux
+- Redux
+- Redux-thunk
+- Superagent
+
+If u have not worked with MaterialUI before here are some usefull links to read up and see how certain things are used.
+
+
+The link below is for an overal understanding of Material ui + a Github repository where u can find alot of examples:
+- https://material-ui.com/
+- https://github.com/mui-org/material-ui
+
+
