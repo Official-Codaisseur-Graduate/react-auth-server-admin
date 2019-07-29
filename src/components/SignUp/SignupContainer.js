@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import SignUpForm from './SignUpForm';
-import { connect } from  'react-redux';
+import { connect } from 'react-redux';
 import { signUp } from '../../actions/signup';
-import {getUsers} from '../../actions/users'
+import { getUsers } from '../../actions/users';
 
 export class SignupContainer extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.getUsers()
     }
 
@@ -15,12 +15,11 @@ export class SignupContainer extends Component {
     }
 
     render() {
-        console.log('propsusers:', this.props.users)
         return (
             <div>
 
-            <h1>Sign up</h1>
-            <SignUpForm onSubmit={this.onSubmit}/>
+                <h1>Sign up</h1>
+                <SignUpForm onSubmit={this.onSubmit} />
             </div>
         )
     }
@@ -33,4 +32,4 @@ const mapStateToProps = (rState) => {
     }
 }
 
-export default connect(mapStateToProps, {signUp, getUsers})(SignupContainer)
+export default connect(mapStateToProps, { signUp, getUsers })(SignupContainer)

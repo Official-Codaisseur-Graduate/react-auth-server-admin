@@ -10,7 +10,6 @@ import { AuthConsumer } from "../../providers/authProvider";
 export const Callback = () => (
     <AuthConsumer>
         {({ signinRedirectCallback }) => {
-            console.log(signinRedirectCallback)
             signinRedirectCallback();
             return <span>loading</span>;
         }}
