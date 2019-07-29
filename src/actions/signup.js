@@ -21,7 +21,7 @@ export function actionSignUp(email, firstName, lastName, password, gender, dateO
 export const signUp = (data) => (dispatch) => {
     request
         .post(`${baseUrl}/users/signup`)
-        .send({...data})
+        .send({ ...data })
         .then(res => {
             if (res.status === 201) {
                 window.history.pushState(`${thisUrl}/register-conferm`)

@@ -8,14 +8,14 @@ export default class Contributor extends Component {
     return (
       <div className='contributor-item'>
         <h1>{this.props.name}</h1>
-        <div className="icon-container">         
+        <div className="icon-container">
           <a href={this.props.linkdin}>
-            <img srcSet={linkedInImg} alt=""/>  
-          </a>  
-          <a href={this.props.github}>
-            <img srcSet={gitHubImg} alt=""/> 
+            <img srcSet={linkedInImg} alt="" />
           </a>
-        </div>       
+          <a href={this.props.github}>
+            <img srcSet={gitHubImg} alt="" />
+          </a>
+        </div>
       </div>
     )
   }
