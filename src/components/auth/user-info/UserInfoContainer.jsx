@@ -29,7 +29,7 @@ export function UserInfoContainer() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
         >
-            <MenuItem component={Link} to="/logout" onClick={handleClose}>Logout     </MenuItem>
+            <MenuItem component={Link} to="/logout" onClick={handleClose}> Logout</MenuItem>
         </Menu>
     </div>
     )
