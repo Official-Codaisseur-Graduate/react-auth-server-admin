@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./Routes.css";
 import { Route, Switch } from "react-router-dom";
 import HeaderContainer from "./../components/header/HeaderContainer";
 import FooterContainer from "./../components/footer/FooterContainer";
@@ -17,7 +18,7 @@ import SignupConfirm from '../components/SignUp/SignupConfirm';
 
 export const Routes = (
 
-    <div>
+    <div className="routes-container">
         <HeaderContainer />
         <Switch>
             <Route exact={true} path="/login" component={LoginContainer} />
