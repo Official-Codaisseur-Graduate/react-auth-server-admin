@@ -7,9 +7,10 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <AuthProvider>
-        
-        <BrowserRouter children={Routes} basename={"/"} />
+      <AuthProvider>        
+        <BrowserRouter children={Routes} basename={"/"}>
+          
+        </BrowserRouter>
       </AuthProvider>
     );
   }

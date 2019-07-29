@@ -22,10 +22,6 @@ export default class PublicPage extends Component {
                     <p>
                         This is the public page. Anybody can have access to this page.
                     </p>
-                    <p>
-                        If you would like to access the protected page, click the button below to login with our Auth Provider
-                    </p>
-                    <button onClick={this.login}>Login with Codaisseur</button>
                 </div>
             </div>
         )

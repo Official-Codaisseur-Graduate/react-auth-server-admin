@@ -2,14 +2,20 @@ import React, { Component } from 'react'
 import SignUpForm from './SignUpForm';
 import { connect } from  'react-redux';
 import { signUp } from '../../actions/signup';
+import {getUsers} from '../../actions/users'
 
 export class SignupContainer extends Component {
+
+    componentDidMount(){
+        this.props.getUsers()
+    }
 
     onSubmit = (data) => {
         this.props.signUp(data)
     }
 
     render() {
+        console.log('propsusers:', this.props.users)
         return (
             <div>
 
@@ -22,8 +28,9 @@ export class SignupContainer extends Component {
 
 const mapStateToProps = (rState) => {
     return {
-        signin: rState.signIn
+        signin: rState.signIn,
+        users: rState.users
     }
 }
 
-export default connect(mapStateToProps, {signUp})(SignupContainer)
+export default connect(mapStateToProps, {signUp, getUsers})(SignupContainer)

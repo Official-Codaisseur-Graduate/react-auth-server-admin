@@ -1,0 +1,20 @@
+div.contributor-item {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+div.contributor-item h1 {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+div.contributor-item > div.icon-container {
+    display: flex;
+
+}
+div.contributor-item > div.icon-container img {
+    width: 20px;
+}
+div.contributor-item > div.icon-container a {
+    margin: 0 5px;
+}
