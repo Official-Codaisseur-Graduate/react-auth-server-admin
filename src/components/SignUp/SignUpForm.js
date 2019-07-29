@@ -4,6 +4,7 @@ import Select from '@material-ui/core/Select'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { MenuItem, InputLabel } from '@material-ui/core';
+import {Link} from 'react-router-dom'
 
 
 export class SignUpForm extends Component {
@@ -22,9 +23,11 @@ export class SignUpForm extends Component {
         if (this.state.password !== this.state.passwordConfirmation) {
             alert('Password must be identical')
         }
-        console.log(this.state)
+
+        //Send data to SignUpContainer.js
         this.props.onSubmit(this.state)
         
+        //Reset state
         this.setState({
             email: '',
             firstName: '',
@@ -41,6 +44,7 @@ export class SignUpForm extends Component {
     onChange = (event) => {
         const { name, value } = event.target
 
+        //Set the state property's to the value typed in
         this.setState({
             [name]: value
         })
@@ -93,7 +97,7 @@ export class SignUpForm extends Component {
                                 fullWidth
                                 name="password"
                                 label="Password"
-                                type="text"
+                                type="password"
                                 id="password"
                                 onChange={this.onChange}
                             />
@@ -103,7 +107,7 @@ export class SignUpForm extends Component {
                                 variant="outlined"
                                 required
                                 fullWidth
-                                type="text"
+                                type="password"
                                 id="passwordConfirmation"
                                 label="Validate password"
                                 name="passwordConfirmation"
@@ -143,6 +147,7 @@ export class SignUpForm extends Component {
                         variant="contained"
                         color="primary"
                         className="signUpButton"
+                        component={Link} to={"/login"}
                     >
                         Sign Up
                     </Button>
