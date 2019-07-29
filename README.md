@@ -12,7 +12,7 @@ This client is made to work with the [node-auth-server](https://github.com/Offic
 - [x] Implement the nav component
 - [x] Implement the user info component
     - **If user is logged in**:
-        - [ ] Needs to display user first name
+        - [ ] Needs to display user first name (right now it hardcoded, fix this by using the Redux store to get the loggin in username)
         - [x] Display logout button
     - **If user is not logged in**:
         - [x] Display login link --> should redirect to login component. Login component should have only a 'Login with Codaisseur' button.
@@ -64,7 +64,7 @@ The link below is for an overal understanding of Material ui + a Github reposito
     - Here you can Sign up by giving the needed information.
     - Press the `Sign up` button and u will be redirected to the `/login` uri.
 - If u already have an account then press the `Login with Codaisseur` button.
-- This button will redirect you to a popup screen where u have to consent the app to use certain information from your profile. This is a reaction from our [node-auth-server](https://github.com/Official-Codaisseur-Graduate/node-auth-server) that provide you with a token to have acces to certain information. (For more information about how the Acces procedure works read the Documentation in the node-auth-server repository)
+- This button will redirect you to a popup screen where u have to consent the app to use certain information from your profile. This is a reaction from our [node-auth-server](https://github.com/Official-Codaisseur-Graduate/node-auth-server) that provide you with a token to have acces to certain information. (For more information about how the Acces procedure works read the Documentation in the [node-auth-server](https://github.com/Official-Codaisseur-Graduate/node-auth-server) repository)
 - If you clicked on the `Yes` button u will be redirected with the right `claims` to a private page.
 
 ## Contributers
