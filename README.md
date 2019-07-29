@@ -67,8 +67,9 @@ The link below is for an overal understanding of Material ui + a Github reposito
 - This button will redirect you to a popup screen where u have to consent the app to use certain information from your profile. This is a reaction from our [node-auth-server](https://github.com/Official-Codaisseur-Graduate/node-auth-server) that provide you with a token to have acces to certain information. (For more information about how the Acces procedure works read the Documentation in the [node-auth-server](https://github.com/Official-Codaisseur-Graduate/node-auth-server) repository)
 - If you clicked on the `Yes` button u will be redirected with the right `claims` to a private page.
 
+
 ## Contributers
 
-### Billy Vlachos
-### Yuri van Schaaik
-### Adrianus Cornet
+### - Billy Vlachos
+### - Yuri van Schaaik
+### - Adrianus Cornet
