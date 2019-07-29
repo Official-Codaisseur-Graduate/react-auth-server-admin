@@ -1,9 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Menu, MenuItem } from '@material-ui/core';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import {makeStyles} from '@material-ui/core/styles'
+
+
+const useStyles = makeStyles(theme => ({
+    button: {
+        margin: theme.spacing(1),
+    }
+}))
 
 export function UserInfoContainer() {
+    const classes = useStyles()
     const [anchorEl, setAnchorEl] = React.useState(null)
 
     function handleClick(event) {
@@ -17,7 +26,9 @@ export function UserInfoContainer() {
     }
 
     return (<div>
-        <Button
+        <Button variant="outlined"
+            color="primary"
+            className={classes.button}
             aria-controls="simple-menu"
             onClick={handleClick}
         >
