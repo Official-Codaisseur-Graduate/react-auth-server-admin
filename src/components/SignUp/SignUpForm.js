@@ -4,7 +4,7 @@ import Select from '@material-ui/core/Select'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { MenuItem, InputLabel } from '@material-ui/core';
-
+import { Link } from 'react-router-dom'
 
 export class SignUpForm extends Component {
     state = {
@@ -25,7 +25,7 @@ export class SignUpForm extends Component {
 
         //Send data to SignUpContainer.js
         this.props.onSubmit(this.state)
-        
+
         //Reset state
         this.setState({
             email: '',
@@ -36,8 +36,6 @@ export class SignUpForm extends Component {
             gender: '',
             dateOfBirth: ''
         })
-
-
     }
 
     onChange = (event) => {
@@ -96,7 +94,7 @@ export class SignUpForm extends Component {
                                 fullWidth
                                 name="password"
                                 label="Password"
-                                type="text"
+                                type="password"
                                 id="password"
                                 onChange={this.onChange}
                             />
@@ -106,7 +104,7 @@ export class SignUpForm extends Component {
                                 variant="outlined"
                                 required
                                 fullWidth
-                                type="text"
+                                type="password"
                                 id="passwordConfirmation"
                                 label="Validate password"
                                 name="passwordConfirmation"
@@ -146,6 +144,7 @@ export class SignUpForm extends Component {
                         variant="contained"
                         color="primary"
                         className="signUpButton"
+                        component={Link} to={"/login"}
                     >
                         Sign Up
                     </Button>

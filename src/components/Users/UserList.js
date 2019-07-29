@@ -9,7 +9,6 @@ import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Paper from '@material-ui/core/Paper';
 
-
 //Create the Row names and values on the top of the table
 const headRows = [
     { id: 'id', numeric: true, disablePadding: true, label: 'User Id' },
@@ -19,7 +18,6 @@ const headRows = [
     { id: 'dateOfBirth', numeric: true, disablePadding: false, label: "Date of Birth" },
     { id: 'gender', numeric: false, disablePadding: false, label: "Gender" }
 ]
-
 
 //Function to render the headRows variable on the screen
 function TableHeadPrefix(props) {
