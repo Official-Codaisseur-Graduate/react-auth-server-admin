@@ -2,8 +2,16 @@ import React from 'react';
 import "./NavContainer.css";
 import { Link } from 'react-router-dom';
 import { Menu, MenuItem, Button } from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles'
+
+const useStyles= makeStyles(theme => ({
+    button: {
+        margin: theme.spacing(1),
+    }
+}))
 
 export default function NavContainer() {
+    const classes = useStyles()
     const [anchorEl, setAnchorEl] = React.useState(null)
 
     function handleClick(event) {
@@ -15,8 +23,10 @@ export default function NavContainer() {
     }
     return (<div>
         <Button
-            varient="outlined"
-            aria-controls="simpl-menu"
+            variant="outlined"
+            color="primary"
+            className={classes.button}
+            aria-controls="simple-menu"
             onClick={handleClick}
         >
             Menu
