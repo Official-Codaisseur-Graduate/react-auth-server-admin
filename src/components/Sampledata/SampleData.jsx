@@ -304,7 +304,6 @@ export default function SampleData() {
                       <TableCell align="right">{row.name}</TableCell>
                       <TableCell align="right">{row.price}</TableCell>
                       <TableCell align="right">{row.stock}</TableCell>
-                      <TableCell align="right">{row.protein}</TableCell>
                     </TableRow>
                   );
                 })}
