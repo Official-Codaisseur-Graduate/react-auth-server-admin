@@ -1,0 +1,14 @@
+div.login-container {
+    background-color:  rgb(245, 244, 255);
+    width: 500px;
+    height: 300px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+div.login-container button {
+    width: 200px;
+    
+}

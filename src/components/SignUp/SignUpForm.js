@@ -144,7 +144,7 @@ export class SignUpForm extends Component {
                         variant="contained"
                         color="primary"
                         className="signUpButton"
-                        component={Link} to={"/login"}
+                        // component={Link} to={"/login"}
                     >
                         Sign Up
                     </Button>
