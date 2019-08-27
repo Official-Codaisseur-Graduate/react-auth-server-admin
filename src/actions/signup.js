@@ -2,7 +2,7 @@ import * as request from 'superagent';
 export const SIGN_IN_INFO = 'SIGN_IN_INFO';
 
 const baseUrl = process.env.REACT_APP_AUTH_URL || 'http://172.16.31.138:5000';
-const thisUrl = 'http://localhost:3000';
+const thisUrl = 'https://localhost:3000';
 
 export function actionSignUp(
     email,
@@ -25,13 +25,16 @@ export function actionSignUp(
     };
 }
 
-export const signUp = data => async dispatch => {
-    const res = await request.post(`${baseUrl}/users/signup`).send({ ...data });
-    // if (res.status === 201) {
-    //     window.history.pushState(`${thisUrl}/register-conferm`);
-    // }
-
-    const action = actionSignUp(res.body);
-
-    return dispatch(action);
+export const signUp = data => dispatch => {
+    request
+        .post(`${baseUrl}/users/signup`)
+        .send({ ...data })
+        .then(res => {
+            // if (res.status === 201) {
+            //     window.history.pushState(`${thisUrl}/register-conferm`)
+            // }
+            const action = actionSignUp(res.body);
+            console.log('Action:', action);
+            dispatch(action);
+        });
 };
