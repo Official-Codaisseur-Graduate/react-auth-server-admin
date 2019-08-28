@@ -11,11 +11,11 @@ export const actionUserList = users => {
     };
 };
 
-export const getUsers = () => dispatch => {
-    return request
-        .get(`${baseUrl}/users`)
-        .then(res => {
-            dispatch(actionUserList(res.body));
-        })
-        .catch(err => console.error(err));
+export const getUsers = () => async dispatch => {
+    try {
+        const res = await request.get(`${baseUrl}/users`);
+        return dispatch(actionUserList(res.body));
+    } catch (err) {
+        return console.error(err);
+    }
 };
