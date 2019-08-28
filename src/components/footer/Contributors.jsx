@@ -8,8 +8,8 @@ export default class Contributors extends Component {
         <h1>Contributors</h1>
         <Contributor
           name='Billy Vlachos'
-          linkdin='https://github.com/lakylekidd'
-          github='https://www.linkedin.com/in/billy-vlachos' />
+          github='https://github.com/lakylekidd'
+          linkdin='https://www.linkedin.com/in/billy-vlachos' />
         <Contributor
           name='Yuri van Schaaik'
           linkdin='https://www.linkedin.com/in/yuri-van-schaaik-603006180'
