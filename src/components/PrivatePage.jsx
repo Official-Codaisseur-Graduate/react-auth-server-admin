@@ -1,10 +1,24 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-export default class PrivatePage extends Component {
-    render() {
-        return (
-            <Link to='/user-list'><button>Manage users</button></Link>
-        )
-    }
-}
+import { getUsers } from '../actions/users';
+
+const PrivatePage = ({ getUsers: getUsersAction }) => {
+    useEffect(() => {
+        getUsersAction();
+    }, [getUsersAction]);
+
+    return (
+        <Link to="/user-list">
+            <button>Manage users</button>
+        </Link>
+    );
+};
+
+const mapStateToProps = ({ users }) => ({ users });
+
+export default connect(
+    mapStateToProps,
+    { getUsers }
+)(PrivatePage);

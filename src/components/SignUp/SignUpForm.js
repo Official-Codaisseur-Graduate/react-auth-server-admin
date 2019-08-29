@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import TextField from '@material-ui/core/TextField'
-import Select from '@material-ui/core/Select'
+import React, { Component } from 'react';
+import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { MenuItem, InputLabel } from '@material-ui/core';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom';
 
 export class SignUpForm extends Component {
     state = {
@@ -16,10 +16,10 @@ export class SignUpForm extends Component {
         gender: '',
         dateOfBirth: '',
         passwordValidation: 'Validate password'
-    }
+    };
 
-    onSubmit = (event) => {
-        event.preventDefault()
+    onSubmit = event => {
+        event.preventDefault();
         // if (this.state.password !== this.state.passwordConfirmation) {
         //     alert('Password must be identical')
         // }
@@ -29,17 +29,17 @@ export class SignUpForm extends Component {
                 // alert('Passwords must be identical')
                 this.setState({
                     passwordValidation: 'Passwords must match.'
-                })
-                return false
-            } else {
-                return true
+                });
+                return false;
             }
-        }
+
+            return true;
+        };
 
         // valid info --> create account
         if (valid()) {
             //Send data to SignUpContainer.js
-            this.props.onSubmit(this.state)
+            this.props.onSubmit(this.state);
 
             //Reset state
             this.setState({
@@ -51,33 +51,33 @@ export class SignUpForm extends Component {
                 gender: '',
                 dateOfBirth: '',
                 passwordValidation: 'Validate password'
-            })
+            });
         }
-    }
+    };
 
-    onChange = (event) => {
-        const { name, value } = event.target
+    onChange = event => {
+        const { name, value } = event.target;
 
         //Set the state property's to the value typed in
         this.setState({
             [name]: value
-        })
-    }
+        });
+    };
 
     // Changes label of password confirmation input so user can see whether passwords are the same
-    onValidatePasswordChange = (event) => {
+    onValidatePasswordChange = event => {
         if (event.target.value !== this.state.password) {
             this.setState({
                 passwordConfirmation: event.target.value,
                 passwordValidation: 'Passwords must match.'
-            })
+            });
         } else {
             this.setState({
                 passwordConfirmation: event.target.value,
                 passwordValidation: 'Validate password'
-            })
+            });
         }
-    }
+    };
 
     render() {
         return (
@@ -184,8 +184,8 @@ export class SignUpForm extends Component {
                     </Button>
                 </form>
             </div>
-        )
+        );
     }
 }
 
-export default SignUpForm
+export default SignUpForm;
