@@ -1,6 +1,6 @@
 import * as request from 'superagent'
 
-const baseUrl = process.env.REACT_APP_AUTH_URL || 'https://172.16.31.64:5000'
+const baseUrl = process.env.REACT_APP_AUTH_URL || 'https://codaisseur-auth-provider.herokuapp.com'
 
 export const GET_USERS = 'GET_USERS'
 
@@ -11,13 +11,15 @@ export const actionUserList = (users) => {
     }
 }
 
-export const getUsers = () => {
-    return async function (dispatch) {
-        request
-            .get(`${baseUrl}/users`)
-            .then(res => {
-                dispatch(actionUserList(res.body))
-            })
-            .catch(err => console.error(err))
-    }
+export const getUsers = () => dispatch => {
+    request
+        .get(`${baseUrl}/users`)
+        .then(res => {
+            const action = actionUserList(res.body)
+            dispatch(action)
+        })
+        .catch(err => {
+            return console.error(err)
+        })
+
 }

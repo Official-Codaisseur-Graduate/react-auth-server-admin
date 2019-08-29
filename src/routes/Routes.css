@@ -1,0 +1,7 @@
+div.routes-container {
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

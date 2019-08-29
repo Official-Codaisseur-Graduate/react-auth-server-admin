@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import EnhancedTable from './UserList';
 import { connect } from 'react-redux'
 import { getUsers } from '../../actions/users'
+import { Link } from 'react-router-dom'
 // import UserList from './UserList';
 
-export class UserListContainer extends Component {
+class UserListContainer extends Component {
 
     componentDidMount() {
         this.props.getUsers()
@@ -13,7 +14,10 @@ export class UserListContainer extends Component {
     render() {
         return (
             <div>
-                <EnhancedTable users={this.props.users} />
+                <Link to='/dashboard'><button>Back to dashboard</button></Link>
+                <div>
+                    <EnhancedTable users={this.props.users} />
+                </div>
             </div>
         )
     }
