@@ -14,28 +14,45 @@ export class SignUpForm extends Component {
         password: '',
         passwordConfirmation: '',
         gender: '',
-        dateOfBirth: ''
+        dateOfBirth: '',
+        passwordValidation: 'Validate password'
     }
 
     onSubmit = (event) => {
         event.preventDefault()
-        if (this.state.password !== this.state.passwordConfirmation) {
-            alert('Password must be identical')
+        // if (this.state.password !== this.state.passwordConfirmation) {
+        //     alert('Password must be identical')
+        // }
+
+        const valid = () => {
+            if (this.state.password !== this.state.passwordConfirmation) {
+                // alert('Passwords must be identical')
+                this.setState({
+                    passwordValidation: 'Passwords must match.'
+                })
+                return false
+            } else {
+                return true
+            }
         }
 
-        //Send data to SignUpContainer.js
-        this.props.onSubmit(this.state)
+        // valid info --> create account
+        if (valid()) {
+            //Send data to SignUpContainer.js
+            this.props.onSubmit(this.state)
 
-        //Reset state
-        this.setState({
-            email: '',
-            firstName: '',
-            lastName: '',
-            password: '',
-            passwordConfirmation: '',
-            gender: '',
-            dateOfBirth: ''
-        })
+            //Reset state
+            this.setState({
+                email: '',
+                firstName: '',
+                lastName: '',
+                password: '',
+                passwordConfirmation: '',
+                gender: '',
+                dateOfBirth: '',
+                passwordValidation: 'Validate password'
+            })
+        }
     }
 
     onChange = (event) => {
@@ -46,10 +63,26 @@ export class SignUpForm extends Component {
             [name]: value
         })
     }
+
+    // Changes label of password confirmation input so user can see whether passwords are the same
+    onValidatePasswordChange = (event) => {
+        if (event.target.value !== this.state.password) {
+            this.setState({
+                passwordConfirmation: event.target.value,
+                passwordValidation: 'Passwords must match.'
+            })
+        } else {
+            this.setState({
+                passwordConfirmation: event.target.value,
+                passwordValidation: 'Validate password'
+            })
+        }
+    }
+
     render() {
         return (
             <div>
-                <form className="signUpForm" noValidate onSubmit={this.onSubmit}>
+                <form className="signUpForm" onSubmit={this.onSubmit}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
                             <TextField
@@ -91,6 +124,7 @@ export class SignUpForm extends Component {
                             <TextField
                                 variant="outlined"
                                 required
+                                inputProps={{ minLength: 8 }}
                                 fullWidth
                                 name="password"
                                 label="Password"
@@ -106,9 +140,9 @@ export class SignUpForm extends Component {
                                 fullWidth
                                 type="password"
                                 id="passwordConfirmation"
-                                label="Validate password"
+                                label={this.state.passwordValidation}
                                 name="passwordConfirmation"
-                                onChange={this.onChange}
+                                onChange={this.onValidatePasswordChange}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>

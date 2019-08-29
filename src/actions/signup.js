@@ -1,7 +1,7 @@
 import * as request from 'superagent'
 export const SIGN_IN_INFO = 'SIGN_IN_INFO'
 
-const baseUrl = process.env.REACT_APP_AUTH_URL || 'http://172.16.31.138:5000'
+const baseUrl = process.env.REACT_APP_AUTH_URL || 'https://172.16.31.138:5000'
 const thisUrl = 'http://localhost:3000'
 
 export function actionSignUp(email, firstName, lastName, password, gender, dateOfBirth) {
