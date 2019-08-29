@@ -4,17 +4,19 @@ import { connect } from 'react-redux'
 import { getUsers } from '../../actions/users'
 // import UserList from './UserList';
 
-export class UserListContainer extends Component {
+class UserListContainer extends Component {
 
     componentDidMount() {
         this.props.getUsers()
     }
 
     render() {
+        console.log('this.props test', this.props)
         return (
-            <div>
+            <h2>Hi</h2>
+            /* <div>
                 <EnhancedTable users={this.props.users} />
-            </div>
+            </div> */
         )
     }
 }
