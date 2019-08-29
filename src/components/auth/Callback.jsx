@@ -11,7 +11,7 @@ export const Callback = () => (
     <AuthConsumer>
         {({ signinRedirectCallback }) => {
             signinRedirectCallback();
-            return <span>Welcome Nicola</span>;
+            return <span>Users list goes here...</span>;
         }}
     </AuthConsumer>
 );
