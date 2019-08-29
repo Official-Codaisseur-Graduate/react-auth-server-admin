@@ -7,7 +7,6 @@ import LogoContainer from '../logo/LogoContainer';
 
 class HeaderContainer extends Component {
     render() {
-        console.log('Props:', this.props)
         return (
             <div className="header-container">
                 <LogoContainer />

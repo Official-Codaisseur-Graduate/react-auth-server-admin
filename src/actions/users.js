@@ -12,13 +12,9 @@ export const actionUserList = (users) => {
 }
 
 export const getUsers = () => dispatch => {
-    console.log('inside getUsers')
-    console.log(`${baseUrl}/users`)
     request
         .get(`${baseUrl}/users`)
         .then(res => {
-            console.log('inside then')
-            console.log('Res:', res.body)
             const action = actionUserList(res.body)
             dispatch(action)
         })
