@@ -30,7 +30,7 @@ export const Routes = (
             <Route exact={true} path="/silentrenew" component={SilentRenew} />
             <Route exact={true} path="/register-conferm" component={SignupConfirm} />
             <PrivateRoute path="/dashboard" component={PrivatePage} />
-            <Route path="/user-list" component={UserListContainer} />
+            <PrivateRoute path="/user-list" component={UserListContainer} />
             <PrivateRoute path='/products' component={SampleData} />
             <Route path="/" component={PublicPage} />
         </Switch>

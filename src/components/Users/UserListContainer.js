@@ -11,12 +11,14 @@ class UserListContainer extends Component {
     }
 
     render() {
-        console.log('this.props test', this.props)
+        console.log('this.props', this.props.users)
         return (
-            <h2>Hi</h2>
-            /* <div>
-                <EnhancedTable users={this.props.users} />
-            </div> */
+            <div>
+                <h2>Hi</h2>
+                <div>
+                    <EnhancedTable users={this.props.users} />
+                </div>
+            </div>
         )
     }
 }
