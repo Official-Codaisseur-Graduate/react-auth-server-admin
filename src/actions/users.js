@@ -7,17 +7,15 @@ const baseUrl =
 
 export const GET_USERS = 'GET_USERS';
 
-export const actionUserList = users => {
-    return {
-        type: GET_USERS,
-        payload: users
-    };
-};
+export const actionUserList = payload => ({
+    type: GET_USERS,
+    payload
+});
 
 export const getUsers = () => async dispatch => {
     try {
-        const res = await request.get(`${baseUrl}/users`);
-        return dispatch(actionUserList(res.body));
+        const { body } = await request.get(`${baseUrl}/users`);
+        return dispatch(actionUserList(body));
     } catch (err) {
         return console.error(err);
     }
