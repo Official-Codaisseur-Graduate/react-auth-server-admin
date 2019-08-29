@@ -1,27 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import EnhancedTable from './UserList';
-import { connect } from 'react-redux'
-import { getUsers } from '../../actions/users'
+import { connect } from 'react-redux';
+import { getUsers } from '../../actions/users';
 // import UserList from './UserList';
 
-export class UserListContainer extends Component {
-
+class UserListContainer extends Component {
     componentDidMount() {
-        this.props.getUsers()
+        this.props.getUsers();
     }
 
     render() {
+        console.log('this.props test', this.props);
         return (
-            <div>
-                <EnhancedTable users={this.props.users} />
-            </div>
-        )
+            <>
+                <div>
+                    <EnhancedTable users={this.props.users} />
+                </div>
+            </>
+        );
     }
 }
 
-const mapStateToProps = (rState) => {
+const mapStateToProps = rState => {
     return {
         users: rState.users
-    }
-}
-export default connect(mapStateToProps, { getUsers })(UserListContainer)
+    };
+};
+export default connect(
+    mapStateToProps,
+    { getUsers }
+)(UserListContainer);

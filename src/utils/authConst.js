@@ -1,4 +1,7 @@
-const authority = process.env.REACT_APP_AUTH_URL || 'http://172.16.31.138:5000';
+// const authority = process.env.REACT_APP_AUTH_URL || 'http://172.16.31.138:5000';
+const authority =
+    process.env.REACT_APP_AUTH_URL ||
+    'https://codaisseur-auth-provider.herokuapp.com';
 
 const authConfig = {
     reactAppAuthUrl: authority,

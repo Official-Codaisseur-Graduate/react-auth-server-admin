@@ -1,7 +1,10 @@
 import * as request from 'superagent';
 export const SIGN_IN_INFO = 'SIGN_IN_INFO';
 
-const baseUrl = process.env.REACT_APP_AUTH_URL || 'http://172.16.31.138:5000';
+const baseUrl =
+    process.env.REACT_APP_AUTH_URL ||
+    'https://codaisseur-auth-provider.herokuapp.com';
+// const baseUrl = process.env.REACT_APP_AUTH_URL || 'http://172.16.31.138:5000';
 // const thisUrl = 'https://localhost:3000';
 
 export function actionSignUp(
