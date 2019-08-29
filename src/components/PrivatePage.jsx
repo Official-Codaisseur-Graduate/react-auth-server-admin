@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import { getUsers } from '../actions/users';
 
 const PrivatePage = ({ getUsers: getUsersAction }) => {
@@ -7,12 +9,14 @@ const PrivatePage = ({ getUsers: getUsersAction }) => {
         getUsersAction();
     }, [getUsersAction]);
 
-    return <div>PRIVATE PAGE</div>;
+    return (
+        <Link to="/user-list">
+            <button>Manage users</button>
+        </Link>
+    );
 };
 
-const mapStateToProps = rState => ({
-    users: rState.users
-});
+const mapStateToProps = ({ users }) => ({ users });
 
 export default connect(
     mapStateToProps,

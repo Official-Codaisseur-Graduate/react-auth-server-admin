@@ -37,7 +37,6 @@ export const signUp = data => dispatch => {
             //     window.history.pushState(`${thisUrl}/register-conferm`)
             // }
             const action = actionSignUp(res.body);
-            console.log('Action:', action);
             dispatch(action);
         });
 };
