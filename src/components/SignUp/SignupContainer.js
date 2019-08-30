@@ -1,35 +1,30 @@
-import React, { Component } from 'react'
-import SignUpForm from './SignUpForm';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+
+import SignUpForm from './SignUpForm';
+
 import { signUp } from '../../actions/signup';
 import { getUsers } from '../../actions/users';
 
-export class SignupContainer extends Component {
+export const SignupContainer = ({
+    getUsers: getUsersAction,
+    signUp: signUpAction
+}) => {
+    useEffect(() => {
+        getUsersAction();
+    }, [getUsersAction]);
 
-    componentDidMount() {
-        this.props.getUsers()
-    }
+    const onSubmit = data => signUpAction(data);
 
-    onSubmit = (data) => {
-        this.props.signUp(data)
-    }
+    return (
+        <>
+            <h1>Sign up</h1>
+            <SignUpForm onSubmit={onSubmit} />
+        </>
+    );
+};
 
-    render() {
-        return (
-            <div>
-
-                <h1>Sign up</h1>
-                <SignUpForm onSubmit={this.onSubmit} />
-            </div>
-        )
-    }
-}
-
-const mapStateToProps = (rState) => {
-    return {
-        signin: rState.signIn,
-        users: rState.users
-    }
-}
-
-export default connect(mapStateToProps, { signUp, getUsers })(SignupContainer)
+export default connect(
+    null,
+    { signUp, getUsers }
+)(SignupContainer);

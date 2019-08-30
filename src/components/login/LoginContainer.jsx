@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button } from '@material-ui/core';
-import AuthService from './../../services/AuthService';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import "./LoginContainer.css";
 
-class LoginContainer extends Component {
-    constructor() {
-        super()
-        this.service = new AuthService();
-    }
+import AuthService from './../../services/AuthService';
 
-    login = () => {
-        this.service.signinRedirect();
-    }
+import './LoginContainer.css';
 
-    render() {
-        return (
-            <div className="login-container">
-                <Button color="primary" onClick={this.login} >Login with Something</Button>
-                <Link to="/register">If you dont have an account yet, please press this link</Link>
-            </div>
-        )
-    }
-}
+const LoginContainer = () => {
+    const service = new AuthService();
+
+    const login = () => service.signinRedirect();
+
+    return (
+        <div className="login-container">
+            <Button color="primary" onClick={login}>
+                Login with Something
+            </Button>
+            <Link to="/register">
+                If you dont have an account yet, please press this link
+            </Link>
+        </div>
+    );
+};
 
 export default connect()(LoginContainer);
