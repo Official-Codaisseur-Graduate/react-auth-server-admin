@@ -12,7 +12,7 @@ import SignupContainer from "../components/SignUp/SignupContainer";
 import { SilentRenew } from "../components/auth/SilentReniew";
 import PublicPage from "./../components/PublicPage";
 import PrivatePage from "./../components/PrivatePage"
-import { UserListContainer } from '../components/Users/UserListContainer'
+import UserListContainer  from '../components/Users/UserListContainer'
 import SignupConfirm from '../components/SignUp/SignupConfirm';
 import SampleData from '../components/Sampledata/SampleData'
 

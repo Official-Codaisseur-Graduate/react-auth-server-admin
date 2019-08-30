@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import AuthService from './../services/AuthService';
-import "./PublicPage.css";
-
+import './PublicPage.css';
 
 export default class PublicPage extends Component {
-
     constructor() {
-        super()
+        super();
         this.service = new AuthService();
     }
 
     login = () => {
         this.service.signinRedirect();
-    }
+    };
 
     render() {
         return (
@@ -20,10 +18,11 @@ export default class PublicPage extends Component {
                 <div className="public-inner-container">
                     <h1>PUBLIC PAGE</h1>
                     <p>
-                        This is the public page. Anybody can have access to this page.
+                        This is the public page. Anybody can have access to this
+                        page.
                     </p>
                 </div>
             </div>
-        )
+        );
     }
 }
