@@ -1,5 +1,5 @@
-import { IDENTITY_CONFIG, METADATA_OIDC } from "../utils/authConst";
-import { UserManager, WebStorageStateStore, Log } from "oidc-client";
+import { IDENTITY_CONFIG, METADATA_OIDC } from '../utils/authConst';
+import { UserManager, WebStorageStateStore, Log } from 'oidc-client';
 
 export default class AuthService {
     UserManager;
@@ -19,18 +19,18 @@ export default class AuthService {
 
         this.UserManager.events.addUserLoaded(user => {
             this.accessToken = user.access_token;
-            localStorage.setItem("access_token", user.access_token);
-            localStorage.setItem("id_token", user.id_token);
+            localStorage.setItem('access_token', user.access_token);
+            localStorage.setItem('id_token', user.id_token);
             this.setUserInfo({
                 accessToken: this.accessToken,
                 idToken: user.id_token
             });
-            if (window.location.href.indexOf("signin-oidc") !== -1) {
+            if (window.location.href.indexOf('signin-oidc') !== -1) {
                 this.navigateToScreen();
             }
         });
         this.UserManager.events.addSilentRenewError(e => {
-            console.error("silent renew error", e.message);
+            console.error('silent renew error', e.message);
         });
 
         this.UserManager.events.addAccessTokenExpired(() => {
@@ -40,7 +40,7 @@ export default class AuthService {
 
     signinRedirectCallback = () => {
         this.UserManager.signinRedirectCallback().then(() => {
-            "";
+            '';
         });
     };
 
@@ -53,8 +53,8 @@ export default class AuthService {
     };
 
     parseJwt = token => {
-        const base64Url = token.split(".")[1];
-        const base64 = base64Url.replace("-", "+").replace("_", "/");
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace('-', '+').replace('_', '/');
         return JSON.parse(window.atob(base64));
     };
 
@@ -67,12 +67,12 @@ export default class AuthService {
     };
 
     signinRedirect = () => {
-        localStorage.setItem("redirectUri", window.location.pathname);
+        localStorage.setItem('redirectUri', window.location.pathname);
         this.UserManager.signinRedirect({});
     };
 
     setUser = data => {
-        localStorage.setItem("userId", data.sub);
+        localStorage.setItem('userId', data.sub);
     };
 
     navigateToScreen = () => {
@@ -80,24 +80,23 @@ export default class AuthService {
         //     ? localStorage.getItem("redirectUri")
         //     : "/dashboard";
         // const language = "/" + redirectUri.split("/")[1];
-        window.location.replace("/dashboard");
+        window.location.replace('/dashboard');
     };
 
     setSessionInfo(authResult) {
-        localStorage.setItem("access_token", authResult.accessToken);
-        localStorage.setItem("id_token", authResult.idToken);
+        localStorage.setItem('access_token', authResult.accessToken);
+        localStorage.setItem('id_token', authResult.idToken);
     }
 
     isAuthenticated = () => {
-        const access_token = localStorage.getItem("access_token");
+        const access_token = localStorage.getItem('access_token');
         return !!access_token;
     };
 
     signinSilent = () => {
-        this.UserManager.signinSilent()
-            .catch(err => {
-                console.error(err);
-            });
+        this.UserManager.signinSilent().catch(err => {
+            console.error(err);
+        });
     };
     signinSilentCallback = () => {
         this.UserManager.signinSilentCallback();
@@ -109,7 +108,7 @@ export default class AuthService {
 
     logout = () => {
         this.UserManager.signoutRedirect({
-            id_token_hint: localStorage.getItem("id_token")
+            id_token_hint: localStorage.getItem('id_token')
         });
         this.UserManager.clearStaleState();
     };
