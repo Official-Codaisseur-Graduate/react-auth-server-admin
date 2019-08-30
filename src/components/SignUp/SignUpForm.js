@@ -172,16 +172,17 @@ export class SignUpForm extends Component {
                             />
                         </Grid>
                     </Grid>
+                    {/* <Link to={'/login'}> */}
                     <Button
                         type="submit"
                         fullWidth
                         variant="contained"
                         color="primary"
                         className="signUpButton"
-                        // component={Link} to={"/login"}
                     >
                         Sign Up
                     </Button>
+                    {/* </Link> */}
                 </form>
             </div>
         );
