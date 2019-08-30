@@ -19,9 +19,9 @@ import SampleData from '../components/Sampledata/SampleData'
 
 export const Routes = (
 
-    <div className="routes-container">
+    <div className="routes-container"  id="outer-container">
         <HeaderContainer />
-        <Switch>
+        <Switch id="page-wrap">
             <Route exact={true} path="/login" component={LoginContainer} />
             <Route exact={true} path="/signin-oidc" component={Callback} />
             <Route exact={true} path="/logout" component={Logout} />
