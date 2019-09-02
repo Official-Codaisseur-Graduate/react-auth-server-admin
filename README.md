@@ -76,8 +76,12 @@ The link below is for an overal understanding of Material ui + a Github reposito
 - If you clicked on the `Yes` button u will be redirected with the right `claims` to a private page.
 
 
-## Contributers
+## Contributors
 
 ### - Billy Vlachos
 ### - Yuri van Schaaik
 ### - Adrianus Cornet
+### - Rejin Cusi
+### - Kamaal Farah
+### - Zorawar Singh
+### - Nicola Urech
