@@ -49,12 +49,20 @@ The link below is for an overal understanding of Material ui + a Github reposito
 - https://material-ui.com/
 - https://github.com/mui-org/material-ui
 
-## Installation guide.
+## Running the app.
 
  - Clone the repository with `git clone https://github.com/Official-Codaisseur-Graduate/react-auth-server-admin.git`
+ - To make the app run you will need your ip address. To find your local ip address, do   the following:
+    1. Open “System Preferences” from the Apple menu.
+    2. Click on “Network”
+    Your IP address will be visible immediately next to “Status” with the next: “Wi-Fi is connected to Codaisseur and has the IP address 172.16.xx.xx".
+    3. Copy the ip address as you will need it in the next steps.
+ - Go to the `authConst.js` file located at `src/utils/authConst.js`
+ - Change the ip addresses in the urls which are used for the properties redirectUri,     silentRedirectUri and postLogoutRedirectUri to the ip address you copied earlier.
+ - Save 
  - `cd` into the cloned repository.
  - `npm install` to install all the packages to make the repo work.
- - `npm run start` to start up the server.
+ - `npm run https` to start up the server.
 
  ## How the app works
 
