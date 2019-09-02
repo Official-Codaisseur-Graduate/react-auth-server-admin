@@ -1,11 +1,27 @@
-div.contributor-item {
+.contributors {
+    text-align: center;
+}
+.contributors-container {
     display: flex;
-    flex-direction: column;
-    margin: 20px 0;
-    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60vw;
+    margin: 0 auto;
+}
+div.contributor-item {
+    margin: 20px;
+    padding: 10px;
+    width: 20%;
+    box-sizing: border-box;
     border: 1px solid black;
-    overflow: hidden;
-    align-content: center
+    border-radius: 3px;
+    align-self: center;
+    box-shadow: 0 2px 10px black;
+    transition: all .3s;
+}
+div.contributor-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 20px black;
 }
 
 div.contributor-item h1 {
@@ -13,21 +29,10 @@ div.contributor-item h1 {
     margin: 0;
     padding: 0;
 }
-
-div.contributor-item > div.icon-container {
-    /* display: flex; */
-    width: 100px;
-    overflow: hidden
-}
-
-div.contributor-item>div.icon-container {
-    display: flex;
-}
-
 div.contributor-item>div.icon-container img {
-    width: 20px;
+    padding-top: 10px;
+    width: 15%;
 }
-
-div.contributor-item>div.icon-container a {
-    margin: 0 5px;
+div.contributor-item>div.icon-container a:not(:last-child) {
+    margin-right: 10px;
 }

@@ -20,6 +20,9 @@ const LoginContainer = () => {
             <Link to="/register">
                 If you dont have an account yet, please press this link
             </Link>
+            <Link to="/forget-password">
+                Forgot password?
+            </Link>
         </div>
     );
 };

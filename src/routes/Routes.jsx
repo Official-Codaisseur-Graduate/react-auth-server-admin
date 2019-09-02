@@ -15,7 +15,8 @@ import PrivatePage from "./../components/PrivatePage"
 import UserListContainer  from '../components/Users/UserListContainer'
 import SignupConfirm from '../components/SignUp/SignupConfirm';
 import SampleData from '../components/Sampledata/SampleData'
-
+import ForgetPasswordContainer from '../components/forgetPassword/ForgetPasswordContainer'
+import ResetPasswordForm from "../components/forgetPassword/ResetPasswordForm";
 
 export const Routes = (
 
@@ -29,6 +30,8 @@ export const Routes = (
             <Route exact={true} path="/register" component={SignupContainer} />
             <Route exact={true} path="/silentrenew" component={SilentRenew} />
             <Route exact={true} path="/register-conferm" component={SignupConfirm} />
+            <Route exact={true} path="/forget-password" component={ForgetPasswordContainer} />
+            <Route exact={true} path="/reset/:token" component={ResetPasswordForm} />
             <PrivateRoute path="/dashboard" component={PrivatePage} />
             <Route path="/user-list" component={UserListContainer} />
             <PrivateRoute path='/products' component={SampleData} />
