@@ -6,8 +6,7 @@ div.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
-    width: 100vw;
+    width: 99vw;
 }
 
 div.header-container::after {
