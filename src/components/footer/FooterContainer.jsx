@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './FooterContainer.css';
-import Contributors from './Contributors'
+import Contributors from './Contributors';
 
-export default class FooterContainer extends Component {
-  render() {
-    return (
-      <footer>
+const FooterContainer = () => (
+    <footer>
         <Contributors />
-      </footer>
-    )
-  }
-}
+    </footer>
+);
+
+export default FooterContainer;

@@ -3,13 +3,16 @@ const authority = process.env.REACT_APP_AUTH_URL || "https://codaisseur-auth-pro
 
 const authConfig = {
     reactAppAuthUrl: authority,
-    clientId: process.env.REACT_APP_IDENTITY_CLIENT_ID || "admin-client",
-    redirectUri: process.env.REACT_APP_REDIRECT_URL || "https://172.16.29.134:3000",
-    login: authority + "/auth",
-    silentRedirectUri: process.env.REACT_APP_SILENT_REDIRECT_URL || "https://172.16.29.134:3000/silentrenew",
-    postLogoutRedirectUri: process.env.REACT_APP_LOGOFF_REDIRECT_URL || "https://172.16.29.134:3000/logout/callback",
-
-}
+    clientId: process.env.REACT_APP_IDENTITY_CLIENT_ID || 'admin-client',
+    redirectUri: process.env.REACT_APP_REDIRECT_URL || 'https://localhost:3000',
+    login: authority + '/auth',
+    silentRedirectUri:
+        process.env.REACT_APP_SILENT_REDIRECT_URL ||
+        'https://localhost:3000/silentrenew',
+    postLogoutRedirectUri:
+        process.env.REACT_APP_LOGOFF_REDIRECT_URL ||
+        'https://localhost:3000/logout/callback'
+};
 
 /**
  * IDENTITY_CONFIG: The config needed to establish the connection.
