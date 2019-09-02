@@ -33,7 +33,7 @@ export const Routes = (
             <Route exact={true} path="/forget-password" component={ForgetPasswordContainer} />
             <Route exact={true} path="/reset/:token" component={ResetPasswordForm} />
             <PrivateRoute path="/dashboard" component={PrivatePage} />
-            <PrivateRoute path="/user-list" component={UserListContainer} />
+            <Route path="/user-list" component={UserListContainer} />
             <PrivateRoute path='/products' component={SampleData} />
             <Route path="/" component={PublicPage} />
         </Switch>
